@@ -1,0 +1,417 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f8fc;
+    overflow-x: hidden;
+}
+
+/* Layout Wrapper */
+.wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    min-width: 255px;
+    max-width: 255px;
+    background: #363740;
+    color: #A4A6B3;
+    transition: all 0.3s;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.sidebar-header {
+    padding: 30px 32px;
+    border-bottom: 1px solid #464852;
+}
+
+.sidebar-header .logo-icon {
+    width: 32px;
+    height: 32px;
+    background: #3751FF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+}
+
+.sidebar-header span {
+    font-size: 19px;
+    font-weight: 700;
+    color: #A4A6B3;
+}
+
+.sidebar ul.components {
+    padding: 20px 0;
+}
+
+.sidebar ul li {
+    margin: 0;
+}
+
+.sidebar ul li a {
+    padding: 18px 32px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #A4A6B3;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.sidebar ul li a i {
+    margin-right: 24px;
+    font-size: 20px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar ul li a:hover {
+    background: #3E4049;
+    color: #DDE2FF;
+}
+
+.sidebar ul li.active a {
+    background: #3E4049;
+    color: #DDE2FF;
+    border-left: 3px solid #3751FF;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #464852;
+    padding: 20px 0;
+}
+
+/* Main Content */
+#content {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+    margin-left: 255px;
+}
+
+/* Top Navigation */
+.navbar {
+    padding: 20px 30px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.navbar h4 {
+    color: #252733;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.navbar i {
+    font-size: 20px;
+    color: #C5C7CD;
+    cursor: pointer;
+}
+
+.navbar img {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+}
+
+.navbar span {
+    font-size: 14px;
+    color: #252733;
+    font-weight: 600;
+}
+
+/* Main Content Area */
+.main-content {
+    padding: 30px;
+}
+
+/* Stats Cards */
+.stat-card {
+    border: 1px solid #DFE0EB;
+    border-radius: 8px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.stat-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.stat-card-active {
+    border: 2px solid #3751FF;
+}
+
+.stat-card .card-body {
+    padding: 24px 32px;
+}
+
+.stat-card .card-subtitle {
+    font-size: 19px;
+    color: #9FA2B4;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.stat-card .card-number {
+    font-size: 40px;
+    font-weight: 700;
+    color: #252733;
+    margin: 0;
+}
+
+/* Cards */
+.card {
+    border: 1px solid #DFE0EB;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.card-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #252733;
+    margin-bottom: 8px;
+}
+
+.card .text-muted {
+    color: #9FA2B4 !important;
+    font-size: 12px;
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 300px;
+    padding: 20px 0;
+}
+
+/* Stat Items */
+.stat-item h3 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #252733;
+    margin: 0;
+}
+
+.stat-item p {
+    font-size: 16px;
+}
+
+/* List Items */
+.list-group-item {
+    border: none;
+    border-bottom: 1px solid #DFE0EB;
+    padding: 20px 0;
+    color: #252733;
+    font-size: 14px;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-item .badge {
+    font-size: 11px;
+    padding: 5px 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Form Controls */
+.form-control {
+    border: 1px solid #F0F1F7;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #3751FF;
+    box-shadow: 0 0 0 0.2rem rgba(55, 81, 255, 0.1);
+}
+
+/* Buttons */
+.btn-group .btn {
+    border: 1px solid #DFE0EB;
+    color: #9FA2B4;
+    font-size: 12px;
+    padding: 8px 16px;
+}
+
+.btn-group .btn:hover {
+    background-color: #3751FF;
+    color: white;
+    border-color: #3751FF;
+}
+
+/* Links */
+a.text-primary {
+    color: #3751FF !important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+a.text-primary:hover {
+    text-decoration: underline;
+}
+
+/* Badges */
+.badge.bg-warning {
+    background-color: #FEC400 !important;
+}
+
+.badge.bg-success {
+    background-color: #29CC97 !important;
+}
+
+.badge.bg-light {
+    background-color: #F0F1F7 !important;
+    color: #9FA2B4 !important;
+}
+
+/* Checkbox Styles */
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #DFE0EB;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: #3751FF;
+    border-color: #3751FF;
+}
+
+/* Responsive Design - Mobile First */
+
+/* Mobile devices (less than 576px) */
+@media (max-width: 575.98px) {
+    .sidebar {
+        margin-left: -255px;
+    }
+    
+    #content {
+        margin-left: 0;
+    }
+    
+    .main-content {
+        padding: 15px;
+    }
+    
+    .navbar {
+        padding: 15px;
+    }
+    
+    .navbar h4 {
+        font-size: 20px;
+    }
+    
+    .stat-card .card-body {
+        padding: 20px;
+    }
+    
+    .stat-card .card-number {
+        font-size: 32px;
+    }
+}
+
+/* Tablets (576px to 991px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .sidebar {
+        margin-left: -255px;
+    }
+    
+    #content {
+        margin-left: 0;
+    }
+}
+
+/* Desktop (992px and above) */
+@media (min-width: 992px) {
+    .sidebar {
+        margin-left: 0;
+    }
+    
+    #content {
+        margin-left: 255px;
+    }
+}
+
+/* Utility Classes */
+.text-dark {
+    color: #252733 !important;
+}
+
+.bg-white {
+    background-color: #ffffff !important;
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #2E2F3A;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Additional refinements */
+.navbar .d-flex i {
+    transition: color 0.2s;
+}
+
+.navbar .d-flex i:hover {
+    color: #3751FF;
+}
+
+/* Better card shadows */
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Task input focus effect */
+.form-control:focus {
+    border-color: #3751FF;
+    box-shadow: 0 0 0 3px rgba(55, 81, 255, 0.1);
+}
+
+/* Profile image hover */
+.navbar img {
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.navbar img:hover {
+    transform: scale(1.05);
+}

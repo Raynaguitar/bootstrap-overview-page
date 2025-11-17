@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Kit - Overview</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="d-flex align-items-center">
+                    <div class="logo-icon">
+                        <i class="bi bi-grid-3x3-gap-fill"></i>
+                    </div>
+                    <span class="ms-2">Dashboard Kit</span>
+                </div>
+            </div>
+            
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#"><i class="bi bi-pie-chart"></i> Overview</a>
+                </li>
+                <li>
+                    <a href="#"><i class="bi bi-ticket-perforated"></i> Tickets</a>
+                </li>
+                <li>
+                    <a href="#"><i class="bi bi-lightbulb"></i> Ideas</a>
+                </li>
+                <li>
+                    <a href="#"><i class="bi bi-people"></i> Contacts</a>
+                </li>
+                <li>
+                    <a href="#"><i class="bi bi-person-badge"></i> Agents</a>
+                </li>
+                <li>
+                    <a href="#"><i class="bi bi-file-earmark-text"></i> Articles</a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#"><i class="bi bi-gear"></i> Settings</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="bi bi-star"></i> Subscription</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <!-- Top Navigation -->
+            <nav class="navbar navbar-light bg-white border-bottom">
+                <div class="container-fluid">
+                    <h4 class="mb-0">Overview</h4>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-search me-3"></i>
+                        <i class="bi bi-bell me-3"></i>
+                        <div class="d-flex align-items-center">
+                            <span class="me-2">Jones Ferdinand</span>
+                            <img src="https://via.placeholder.com/40" alt="profile" class="rounded-circle">
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Stats Cards -->
+                <div class="row g-4 mb-4">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <p class="card-subtitle">Unresolved</p>
+                                <h2 class="card-number">60</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card stat-card stat-card-active">
+                            <div class="card-body">
+                                <p class="card-subtitle">Overdue</p>
+                                <h2 class="card-number">16</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <p class="card-subtitle">Open</p>
+                                <h2 class="card-number">43</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <p class="card-subtitle">On hold</p>
+                                <h2 class="card-number">64</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trends and Stats Row -->
+                <div class="row g-4 mb-4">
+                    <!-- Today's Trends -->
+                    <div class="col-12 col-lg-8">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div>
+                                        <h5 class="card-title">Today's trends</h5>
+                                        <p class="text-muted small">as of 25 May 2019, 09:41 PM</p>
+                                    </div>
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" class="btn btn-outline-secondary">Today</button>
+                                        <button type="button" class="btn btn-outline-secondary">Yesterday</button>
+                                    </div>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="trendsChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side Stats -->
+                    <div class="col-12 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column justify-content-around">
+                                <div class="stat-item">
+                                    <p class="text-muted mb-1">Resolved</p>
+                                    <h3>449</h3>
+                                </div>
+                                <div class="stat-item">
+                                    <p class="text-muted mb-1">Received</p>
+                                    <h3>426</h3>
+                                </div>
+                                <div class="stat-item">
+                                    <p class="text-muted mb-1">Average first response time</p>
+                                    <h3>33m</h3>
+                                </div>
+                                <div class="stat-item">
+                                    <p class="text-muted mb-1">Average response time</p>
+                                    <h3>3h 8m</h3>
+                                </div>
+                                <div class="stat-item">
+                                    <p class="text-muted mb-1">Resolution within SLA</p>
+                                    <h3>94%</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: Tickets and Tasks -->
+                <div class="row g-4">
+                    <!-- Unresolved Tickets -->
+                    <div class="col-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div>
+                                        <h5 class="card-title">Unresolved tickets</h5>
+                                        <p class="text-muted small">Group: Support</p>
+                                    </div>
+                                    <a href="#" class="text-primary">View details</a>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>Waiting on Feature Request</span>
+                                        <span class="badge bg-light text-dark">4238</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>Awaiting Customer Response</span>
+                                        <span class="badge bg-light text-dark">1005</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>Awaiting Developer Fix</span>
+                                        <span class="badge bg-light text-dark">914</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>Pending</span>
+                                        <span class="badge bg-light text-dark">281</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tasks -->
+                    <div class="col-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div>
+                                        <h5 class="card-title">Tasks</h5>
+                                        <p class="text-muted small">Today</p>
+                                    </div>
+                                    <a href="#" class="text-primary">View all</a>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Create new task">
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" id="task1">
+                                        <label class="form-check-label flex-grow-1" for="task1">
+                                            Finish ticket update
+                                        </label>
+                                        <span class="badge bg-warning text-dark">URGENT</span>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" id="task2">
+                                        <label class="form-check-label flex-grow-1" for="task2">
+                                            Create new ticket example
+                                        </label>
+                                        <span class="badge bg-success">NEW</span>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" id="task3" checked>
+                                        <label class="form-check-label flex-grow-1" for="task3">
+                                            Update ticket report
+                                        </label>
+                                        <span class="badge bg-light text-muted">DEFAULT</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
