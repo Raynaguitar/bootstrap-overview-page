@@ -122,3 +122,109 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Dashboard initialized successfully!');
     
 });
+
+// Quick task form
+    const quickTaskForm = document.getElementById('quickTaskForm');
+    if (quickTaskForm) {
+        quickTaskForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const input = document.getElementById('quickTaskInput');
+            const taskList = document.getElementById('taskList');
+            
+            if (input.value.trim() !== '') {
+                const newTask = document.createElement('li');
+                newTask.className = 'list-group-item d-flex align-items-center';
+                const taskId = 'task' + Date.now();
+                
+                newTask.innerHTML = `
+                    <input class="form-check-input me-2" type="checkbox" id="${taskId}">
+                    <label class="form-check-label flex-grow-1" for="${taskId}">
+                        ${input.value}
+                    </label>
+                    <span class="badge bg-success">NEW</span>
+                `;
+                
+                taskList.appendChild(newTask);
+                input.value = '';
+                
+                // Success message
+                const successMsg = document.createElement('div');
+                successMsg.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 end-0 m-3';
+                successMsg.style.zIndex = '9999';
+                successMsg.innerHTML = `
+                    Task added successfully!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                document.body.appendChild(successMsg);
+                
+                setTimeout(() => {
+                    successMsg.remove();
+                }, 3000);
+            }
+        });
+    }
+
+    // Advanced task form (modal)
+    const addTaskForm = document.getElementById('addTaskForm');
+    if (addTaskForm) {
+        addTaskForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('taskTitle').value;
+            const priority = document.getElementById('taskPriority').value;
+            const taskList = document.getElementById('taskList');
+            
+            let badgeClass = 'bg-secondary';
+            let badgeText = 'NORMAL';
+            
+            switch(priority) {
+                case 'urgent':
+                    badgeClass = 'bg-danger';
+                    badgeText = 'URGENT';
+                    break;
+                case 'high':
+                    badgeClass = 'bg-warning text-dark';
+                    badgeText = 'HIGH';
+                    break;
+                case 'low':
+                    badgeClass = 'bg-info';
+                    badgeText = 'LOW';
+                    break;
+            }
+            
+            const newTask = document.createElement('li');
+            newTask.className = 'list-group-item d-flex align-items-center';
+            const taskId = 'task' + Date.now();
+            
+            newTask.innerHTML = `
+                <input class="form-check-input me-2" type="checkbox" id="${taskId}">
+                <label class="form-check-label flex-grow-1" for="${taskId}">
+                    ${title}
+                </label>
+                <span class="badge ${badgeClass}">${badgeText}</span>
+            `;
+            
+            taskList.appendChild(newTask);
+            
+            // Close modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('addTaskModal'));
+            modal.hide();
+            
+            // Reset form
+            addTaskForm.reset();
+            
+            // Success message
+            const successMsg = document.createElement('div');
+            successMsg.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 end-0 m-3';
+            successMsg.style.zIndex = '9999';
+            successMsg.innerHTML = `
+                Task created successfully!
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(successMsg);
+            
+            setTimeout(() => {
+                successMsg.remove();
+            }, 3000);
+        });
+    }
